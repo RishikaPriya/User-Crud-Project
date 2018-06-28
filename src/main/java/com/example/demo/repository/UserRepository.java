@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    @Query(value = "SELECT * FROM User u WHERE u.name = ?1 ORDER BY u.id LIMIT ?2" , nativeQuery = true)
+    @Query(value = "SELECT * FROM user u WHERE u.name = ?1 ORDER BY u.id LIMIT ?2" , nativeQuery = true)
     List<User> findUser(String name, int limit);
 }

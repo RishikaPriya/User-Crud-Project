@@ -15,4 +15,6 @@ public class Constants {
 
     public static final String INSERT_SUCCESS = "User data inserted successfully";
     public static final String UPDATE_SUCCESS = "User data updated successfully";
+    public static final String DATA_FOUND_SUCCESSFULLY = "User data found successfully";
+    public static final String DELETE_SUCCESS = "User data deleted successfully";
 }

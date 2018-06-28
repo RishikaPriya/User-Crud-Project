@@ -121,7 +121,7 @@ public class UserController {
             userRepository.delete(user);
 
             response.setUsers("UserId: " + id + " deleted successfully");
-            response.setStatus(new Status(SUCCESSFUL, UPDATE_SUCCESS, null));
+            response.setStatus(new Status(SUCCESSFUL, DELETE_SUCCESS, null));
 
         }catch(JDBCConnectionException ex){
             return getJDBCConnectionResponse(response, ex);
@@ -142,7 +142,7 @@ public class UserController {
         log.info("Delete all user info");
         userRepository.deleteAll();
         response.setUsers("User deleted successfully");
-        response.setStatus(new Status(SUCCESSFUL, UPDATE_SUCCESS, null));
+        response.setStatus(new Status(SUCCESSFUL, DELETE_SUCCESS, null));
 
         }catch(JDBCConnectionException ex){
             return getJDBCConnectionResponse(response, ex);
@@ -159,7 +159,7 @@ public class UserController {
         try{
             log.info("Retrieve user info");
             response.setUsers(userRepository.findById(id).get());
-            response.setStatus(new Status(SUCCESSFUL, UPDATE_SUCCESS, null));
+            response.setStatus(new Status(SUCCESSFUL, DATA_FOUND_SUCCESSFULLY, null));
 
         }catch(JDBCConnectionException ex){
             return getJDBCConnectionResponse(response, ex);
@@ -179,7 +179,7 @@ public class UserController {
         try {
         log.info("Retrieve all user info");
         response.setUsers(userRepository.findAll());
-        response.setStatus(new Status(SUCCESSFUL, UPDATE_SUCCESS, null));
+        response.setStatus(new Status(SUCCESSFUL, DATA_FOUND_SUCCESSFULLY, null));
 
         }catch(JDBCConnectionException ex){
             return getJDBCConnectionResponse(response, ex);
@@ -197,7 +197,7 @@ public class UserController {
         try {
             log.info("Retrieve all user info");
             response.setUsers(userRepository.findUser(name, limit));
-            response.setStatus(new Status(SUCCESSFUL, UPDATE_SUCCESS, null));
+            response.setStatus(new Status(SUCCESSFUL, DATA_FOUND_SUCCESSFULLY, null));
 
         }catch(JDBCConnectionException ex){
             return getJDBCConnectionResponse(response, ex);
